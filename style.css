@@ -81,11 +81,28 @@ textarea {
   padding: 10px;
   font-family: monospace;
   font-size: 0.95rem;
-  resize: none;
+  resize: vertical; /* ✅ اب vertical resize */
+  overflow-y: auto; /* ✅ scrollbar آئے گی جب ضرورت ہو */
   border: none;
   outline: none;
   background: var(--editor-bg);
   color: var(--text-color);
+  min-height: 150px;
+  max-height: 600px; /* optional: maximum height limit */
+}
+
+/* 🎨 scrollbar design تھوڑا خوبصورت بنائیں */
+textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.5);
+  border-radius: 10px;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 100, 100, 0.8);
 }
 
 .controls {
