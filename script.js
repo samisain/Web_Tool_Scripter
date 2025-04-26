@@ -20,19 +20,32 @@ htmlBox.addEventListener('input', updatePreview);
 cssBox.addEventListener('input', updatePreview);
 jsBox.addEventListener('input', updatePreview);
 
-// Download functionality
+// Download specific file function
 function downloadFiles() {
-  const name = projectName.value.trim() || 'Untitled';
   const fileType = document.getElementById('fileType').value;
 
-  if (fileType === 'html') saveFile(htmlBox.value, name + '.html');
-  if (fileType === 'css') saveFile(cssBox.value, name + '.css');
-  if (fileType === 'js') saveFile(jsBox.value, name + '.js');
-  if (fileType === 'all') {
-    saveFile(htmlBox.value, name + '.html');
-    saveFile(cssBox.value, name + '.css');
-    saveFile(jsBox.value, name + '.js');
+  if (fileType === 'html') {
+    download('text/html', htmlBox.value, 'index.html');
+  } else if (fileType === 'css') {
+    download('text/css', cssBox.value, 'style.css');
+  } else if (fileType === 'js') {
+    download('text/javascript', jsBox.value, 'script.js');
+  } else if (fileType === 'all') {
+    download('text/html', htmlBox.value, 'index.html');
+    download('text/css', cssBox.value, 'style.css');
+    download('text/javascript', jsBox.value, 'script.js');
   }
+}
+
+function download(type, content, filename) {
+  const blob = new Blob([content], { type: type });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(a.href);
 }
 
 function saveFile(content, filename) {
