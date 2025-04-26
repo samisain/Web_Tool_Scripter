@@ -5,65 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Web Tool Scripter</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a2d04b48c3.js" crossorigin="anonymous"></script>
 </head>
-<body class="dark">
-  
-  <!-- Header -->
-  <header>
-    <div class="header-title">
-      <i class="fas fa-code"></i> Web Tool Scripter
-    </div>
-    <div class="project-title">
-      <input type="text" id="projectName" value="Untitled" placeholder="Project Name">
-      <i class="fas fa-pencil-alt edit-icon"></i>
-    </div>
-    <button id="themeToggle"><i class="fas fa-moon"></i></button>
-  </header>
+<body>
 
-  <!-- Main Content -->
-  <main>
+<header>
+  <h1><i class="fas fa-code"></i> Web Tool Scripter</h1>
+  <button id="themeToggle">🌙</button>
+</header>
+
+<main>
+  <div class="editor-container">
     <div class="code-editor">
-      
-      <!-- HTML Editor -->
-      <div class="editor-box">
-        <div class="editor-title"><i class="fab fa-html5"></i> HTML</div>
-        <textarea id="htmlCode" placeholder="Write HTML code here..."></textarea>
-      </div>
-      
-      <!-- CSS Editor -->
-      <div class="editor-box">
-        <div class="editor-title"><i class="fab fa-css3-alt"></i> CSS</div>
-        <textarea id="cssCode" placeholder="Write CSS code here..."></textarea>
-      </div>
-      
-      <!-- JS Editor -->
-      <div class="editor-box">
-        <div class="editor-title"><i class="fab fa-js-square"></i> JavaScript</div>
-        <textarea id="jsCode" placeholder="Write JS code here..."></textarea>
-      </div>
-      
+      <div class="editor-header">HTML</div>
+      <textarea id="htmlCode" placeholder="Write HTML code here..."></textarea>
     </div>
 
-    <!-- Actions -->
-    <div class="actions">
-      <select id="fileType">
-        <option value="all">Download All</option>
-        <option value="html">Download HTML</option>
-        <option value="css">Download CSS</option>
-        <option value="js">Download JS</option>
-      </select>
-      <button onclick="downloadFiles()">Download</button>
+    <div class="code-editor">
+      <div class="editor-header">CSS</div>
+      <textarea id="cssCode" placeholder="Write CSS code here..."></textarea>
     </div>
 
-    <!-- Output -->
-    <div class="output">
-      <iframe id="preview"></iframe>
+    <div class="code-editor">
+      <div class="editor-header">JavaScript</div>
+      <textarea id="jsCode" placeholder="Write JavaScript code here..."></textarea>
     </div>
-    
-  </main>
+  </div>
 
-  <script src="script.js"></script>
+  <div class="controls">
+    <select id="fileType">
+      <option value="html">HTML</option>
+      <option value="css">CSS</option>
+      <option value="js">JS</option>
+      <option value="all">All Files</option>
+    </select>
+    <input type="text" id="projectName" placeholder="Project name (Untitled)">
+    <button onclick="downloadFiles()">Download</button>
+    <button id="clearCode">Clear Code</button>
+  </div>
 
+  <iframe id="preview"></iframe>
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
