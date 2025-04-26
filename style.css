@@ -1,143 +1,121 @@
-/* Reset & Base */
+:root {
+  --bg-color: #f5f5f5;
+  --header-color: #007bff;
+  --text-color: #000;
+  --editor-bg: #ffffff;
+  --iframe-bg: #ffffff;
+}
+
+body.dark {
+  --bg-color: #1e1e1e;
+  --header-color: #222;
+  --text-color: #eee;
+  --editor-bg: #2c2c2c;
+  --iframe-bg: #333;
+}
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #111827;
-  color: white;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
 }
 
-.dark {
-  background: #111827;
-  color: white;
-}
-
-/* Header */
 header {
-  background: #1f2937;
+  background-color: var(--header-color);
+  padding: 10px 20px;
+  color: white;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 15px 20px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.header-title {
-  font-size: 1.5rem;
-  color: white;
-  display: flex;
   align-items: center;
-  gap: 10px;
-  font-weight: bold;
-}
-
-.project-title {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.project-title input {
-  background: transparent;
-  border: none;
-  border-bottom: 2px solid white;
-  color: white;
-  font-size: 1.1rem;
-  outline: none;
-}
-
-.edit-icon {
-  color: white;
 }
 
 #themeToggle {
-  background: transparent;
+  background: none;
+  border: 2px solid white;
+  padding: 5px 10px;
   color: white;
-  border: none;
+  border-radius: 20px;
   cursor: pointer;
   font-size: 1.2rem;
 }
 
-/* Layout */
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
 main {
   padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.editor-container {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .code-editor {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  overflow-x: auto;
-}
-
-.editor-box {
   flex: 1;
+  background: var(--editor-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  background: #1f2937;
-  padding: 10px;
-  border-radius: 8px;
-  min-width: 300px;
 }
 
-.editor-title {
+.editor-header {
+  background-color: var(--header-color);
+  color: white;
+  padding: 8px;
+  text-align: center;
   font-weight: bold;
-  color: #38bdf8;
-  margin-bottom: 5px;
-  font-size: 1.2rem;
 }
 
 textarea {
-  width: 100%;
-  height: 200px;
-  background: #0f172a;
-  color: white;
-  border: none;
-  resize: vertical;
+  flex: 1;
   padding: 10px;
-  border-radius: 5px;
   font-family: monospace;
+  font-size: 0.95rem;
+  resize: none;
+  border: none;
+  outline: none;
+  background: var(--editor-bg);
+  color: var(--text-color);
 }
 
-/* Actions */
-.actions {
+.controls {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
-.actions select {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+select, input[type="text"], button {
+  padding: 8px 12px;
   font-size: 1rem;
-  background: white;
-  color: black;
-}
-
-.dark .actions select {
-  background: #1f2937;
-  color: white;
-  border: 1px solid #4b5563;
-}
-
-.actions button {
-  padding: 10px 15px;
-  border-radius: 8px;
-  background: #38bdf8;
-  color: black;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-}
-
-/* Preview */
-.output iframe {
-  width: 100%;
-  height: 300px;
-  background: white;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 5px;
+}
+
+button {
+  background-color: var(--header-color);
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+iframe {
+  width: 100%;
+  height: 400px;
+  border: 1px solid #ccc;
+  background: var(--iframe-bg);
 }
