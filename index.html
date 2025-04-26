@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Web Tool Scripter</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="dark">
+  
+  <!-- Header -->
+  <header>
+    <div class="header-title">
+      <i class="fas fa-code"></i> Web Tool Scripter
+    </div>
+    <div class="project-title">
+      <input type="text" id="projectName" value="Untitled" placeholder="Project Name">
+      <i class="fas fa-pencil-alt edit-icon"></i>
+    </div>
+    <button id="themeToggle"><i class="fas fa-moon"></i></button>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <div class="code-editor">
+      
+      <!-- HTML Editor -->
+      <div class="editor-box">
+        <div class="editor-title"><i class="fab fa-html5"></i> HTML</div>
+        <textarea id="htmlCode" placeholder="Write HTML code here..."></textarea>
+      </div>
+      
+      <!-- CSS Editor -->
+      <div class="editor-box">
+        <div class="editor-title"><i class="fab fa-css3-alt"></i> CSS</div>
+        <textarea id="cssCode" placeholder="Write CSS code here..."></textarea>
+      </div>
+      
+      <!-- JS Editor -->
+      <div class="editor-box">
+        <div class="editor-title"><i class="fab fa-js-square"></i> JavaScript</div>
+        <textarea id="jsCode" placeholder="Write JS code here..."></textarea>
+      </div>
+      
+    </div>
+
+    <!-- Actions -->
+    <div class="actions">
+      <select id="fileType">
+        <option value="all">Download All</option>
+        <option value="html">Download HTML</option>
+        <option value="css">Download CSS</option>
+        <option value="js">Download JS</option>
+      </select>
+      <button onclick="downloadFiles()">Download</button>
+    </div>
+
+    <!-- Output -->
+    <div class="output">
+      <iframe id="preview"></iframe>
+    </div>
+    
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+/* Reset & Base */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #111827;
+  color: white;
+}
+
+.dark {
+  background: #111827;
+  color: white;
+}
+
+/* Header */
+header {
+  background: #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.header-title {
+  font-size: 1.5rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+}
+
+.project-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.project-title input {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+  font-size: 1.1rem;
+  outline: none;
+}
+
+.edit-icon {
+  color: white;
+}
+
+#themeToggle {
+  background: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/* Layout */
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.code-editor {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.editor-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #1f2937;
+  padding: 10px;
+  border-radius: 8px;
+  min-width: 300px;
+}
+
+.editor-title {
+  font-weight: bold;
+  color: #38bdf8;
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  background: #0f172a;
+  color: white;
+  border: none;
+  resize: vertical;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: monospace;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.actions select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background: white;
+  color: black;
+}
+
+.dark .actions select {
+  background: #1f2937;
+  color: white;
+  border: 1px solid #4b5563;
+}
+
+.actions button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  background: #38bdf8;
+  color: black;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+/* Preview */
+.output iframe {
+  width: 100%;
+  height: 300px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
